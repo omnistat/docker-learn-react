@@ -1,0 +1,14 @@
+# Require sudo permissions
+sudo: required
+# Install docker for travis
+services:
+  - docker
+
+# Run this setup command before running tests
+before_install:
+  - docker build -t omnistat/docker-learn-react -f Dockerfile.dev .
+
+# Commands to run the tests. Travis expexts exit code of 0
+# Run in continuous integration mode by setting env variable in docker
+script:
+  - docker run -e CI=true omnistat/docker-learn-react npm run test
