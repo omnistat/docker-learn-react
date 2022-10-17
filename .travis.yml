@@ -12,3 +12,18 @@ before_install:
 # Run in continuous integration mode by setting env variable in docker
 script:
   - docker run -e CI=true omnistat/docker-learn-react npm run test
+
+# Configure deployment to AWS
+deploy:
+  provider: elasticbreanstalk
+  region: "eu-west-2"
+  app: "docker-learn-react"
+  env: "Dockerlearnreact-env"
+  # Copy over into S3 bucket on AWS 
+  bucket_name: "elasticbeanstalk-eu-west-2-903764346893"
+  bucket_path: "docker-learn-react"
+  on:
+    branch: master
+  # Get access keys from environmnet variables configured in Travis CI
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
