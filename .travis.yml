@@ -23,7 +23,7 @@ deploy:
   bucket_name: "elasticbeanstalk-eu-west-2-903764346893"
   bucket_path: "docker-learn-react"
   on:
-    branch: master
+    branch: main
   # Get access keys from environmnet variables configured in Travis CI
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
