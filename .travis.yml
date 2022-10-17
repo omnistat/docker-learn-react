@@ -25,5 +25,5 @@ deploy:
   on:
     branch: master
   # Get access keys from environmnet variables configured in Travis CI
-  access_key_id: $AWS_ACCESS_KEY
+  access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
