@@ -15,7 +15,7 @@ script:
 
 # Configure deployment to AWS
 deploy:
-  provider: elasticbreanstalk
+  provider: elasticbeanstalk
   region: "eu-west-2"
   app: "docker-learn-react"
   env: "Dockerlearnreact-env"
